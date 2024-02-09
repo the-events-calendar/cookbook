@@ -1,6 +1,6 @@
 ## The Events Calendar Team Cookbook
 
-This is a collection of recipes and best practices for the Events Calendar team. It is a living document and will be updated as we learn and grow.
+This is a collection of recipes and best practices for <a href="https://theeventscalendar.com/" target="_blank">The Events Calendar</a> team. It is a living document and will be updated as we learn and grow.
 
 ### Contributing
 
