@@ -29,7 +29,7 @@ non-unbound query.
    suite, [refactor the query to use the ORM][3].
 
 3. If the query is a direct query to the database done using the global `$wpdb` object, refactor the query to use
-   the [`StellarWP\DB`](https://github.com/stellarwp/db) class:
+   the [`StellarWP\DB`][5] class:
 
     ```diff
     $query = "SELECT * FROM {$wpdb->posts} WHERE post_type = 'tribe_events' AND post_status = 'private'"; 
@@ -89,3 +89,5 @@ non-unbound query.
 [3]:  ../refactor-unbounded-tec-orm-query/index.md
 
 [4]: https://www.php.net/manual/en/language.generators.overview.php
+
+[5]: https://github.com/stellarwp/db
