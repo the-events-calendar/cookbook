@@ -7,10 +7,7 @@ In the meantime, if you have an idea for a new recipe, and do not have the time 
 
 ### TODO
 
-* Refactor a query using the global wpdb to use the `StellarWP\DB` class
-* Refactor a `WP_Query` to use the ORM
 * Fetch data from TEC + CT1 custom tables using models
-* Refactor an unbound query to a non-unbound query
 * Refactor use of `Tribe__Date_Utils` to use the `StellarWP\Dates\Dates` class
 * Refactor uses of a mutable date objects to use immutable date objects
 * Fetch a value from cache and protect against cache poisoning
