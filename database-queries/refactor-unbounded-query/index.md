@@ -60,7 +60,7 @@ non-unbound query.
     ```dif
     $query = "SELECT * FROM {$wpdb->posts} WHERE post_type = 'tribe_events' AND post_status = 'private'";
     - $private_events = \TEC\Common\StellarWP\DB\DB::get_results( $query );
-    + $private_events = \TEC\Common\StellarWP\DB\DB::generate_results( $query, 10 );
+    + $private_events = \TEC\Common\StellarWP\DB\DB::generate_results( $query, OBJECT, 10 );
    
     foreach( $private_events as $private_event ) {
         // Do something with the private event.
@@ -72,7 +72,7 @@ non-unbound query.
     ```diff
     $query = "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'tribe_events' AND post_status = 'private'";
     - $private_events_ids = \TEC\Common\StellarWP\DB\DB::get_col( $query );
-    + $private_events_ids = \TEC\Common\StellarWP\DB\DB::generate_col( $query, 50 );
+    + $private_events_ids = \TEC\Common\StellarWP\DB\DB::generate_col( $query, 0, 50 );
    
     foreach( $private_events_ids as $private_event_id ) {
         // Do something with the private event ID.
