@@ -84,7 +84,7 @@ non-unbound query.
 
 [1]: https://wordpress.org/plugins/query-monitor/
 
-[2]: ../finding-unbounded-queries/index.md
+[2]: ../find-unbounded-queries/index.md
 
 [3]:  ../refactor-unbounded-tec-orm-query/index.md
 
