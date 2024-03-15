@@ -10,7 +10,6 @@ In the meantime, if you have an idea for a new recipe, and do not have the time 
 * Fetch data from TEC + CT1 custom tables using models
 * Refactor use of `Tribe__Date_Utils` to use the `StellarWP\Dates\Dates` class
 * Refactor uses of a mutable date objects to use immutable date objects
-* Fetch a value from cache and protect against cache poisoning
 * Fetch an unbound number of posts from the database
 * Hook on a filter or action from WordPress core or a third-party plugin
     - Loose typing

@@ -137,7 +137,8 @@ the context of The Events Calendar suite of plugins.
        $cache = tribe_cache();
        $cache_key = __FUNCTION__ . $count . $from . $format . get_current_user_id();
     
-       $cached = $cache->get( $cache_key );
+       // The cache ID is key + expiration trigger.
+       $cached = $cache->get( $cache_key, Tribe__Cache__Listener::TRIGGER_SAVE_POST );
 
        if( $cached ) {
            return $cached;
@@ -171,8 +172,9 @@ the context of The Events Calendar suite of plugins.
    function tec_fetch_user_visible_events(int $count, int $from, string $format): string {
        $cache = tribe_cache();
        $cache_key = __FUNCTION__ . $count . $from . $format . get_current_user_id();
-    
-       $cached = $cache->get( $cache_key );
+   
+       // The cache ID is key + expiration trigger.    
+       $cached = $cache->get( $cache_key, Tribe__Cache__Listener::TRIGGER_UPDATED_OPTION );
 
        if( $cached ) {
            return $cached;
@@ -206,8 +208,9 @@ the context of The Events Calendar suite of plugins.
    function tec_fetch_user_visible_events(int $count, int $from, string $format): string {
        $cache = tribe_cache();
        $cache_key = __FUNCTION__ . $count . $from . $format . get_current_user_id();
-    
-       $cached = $cache->get( $cache_key );
+      
+       // The cache ID is key + expiration trigger. 
+       $cached = $cache->get( $cache_key, Tribe__Cache__Listener::TRIGGER_GENERATE_REWRITE_RULES );
 
        if( $cached ) {
            return $cached;
