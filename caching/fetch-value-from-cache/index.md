@@ -31,7 +31,10 @@ This concept applies to all types of caches, including memoization and real obje
    }
 
    // Using tribe_cache() API
-   $purchasers_count = tribe_cache()->get( 'purchasers_count_' . $ticket_id, Tribe__Cache__Listener::TRIGGER_SAVE_POST );
+   $purchasers_count = tribe_cache()->get(
+      'purchasers_count_' . $ticket_id, 
+      Tribe__Cache__Listener::TRIGGER_SAVE_POST
+   );
 
    if( ! $purchasers_count ){
        // Fetch the customers from the database or an API ...
@@ -55,7 +58,14 @@ This concept applies to all types of caches, including memoization and real obje
    }
    
    // tribe_cache() API
-   $cached = tribe_cache()->get( 'purchasers_count_' . $ticket_id, Tribe__Cache__Listener::TRIGGER_SAVE_POST, null, null, null, $found );
+   $cached = tribe_cache()->get(
+      'purchasers_count_' . $ticket_id,
+      Tribe__Cache__Listener::TRIGGER_SAVE_POST,
+      null,
+      null,
+      null,
+      $found
+   );
 
    if( ! $found ) ) {
        // Fetch the customers from the database or an API ...
@@ -99,12 +109,23 @@ This concept applies to all types of caches, including memoization and real obje
    }
 
    // Using the tribe_cache() API
-   $cached = tribe_cache()->get( 'my_stored_array', Tribe__Cache__Listener::TRIGGER_SAVE_POST, null, null, null, $found);
+   $cached = tribe_cache()->get(
+      'my_stored_array',
+      Tribe__Cache__Listener::TRIGGER_SAVE_POST, 
+      null,
+      null,
+      null,
+      $found
+   );
 
    if( ! ( $found && Arr::has_shape( $cached, [ 'user_id' => 'is_int', 'level' => 'is_string' ] ) ) ) {
       $array_value = [ /* fetch or build the value ... */ ];
        
-      tribe_cache()->set( 'my_stored_array', $array_value, '', Tribe__Cache__Listener::TRIGGER_SAVE_POST );   
+      tribe_cache()->set( 
+         'my_stored_array', 
+         $array_value, 
+         '', Tribe__Cache__Listener::TRIGGER_SAVE_POST
+      );   
    }
    ```
 
@@ -125,7 +146,14 @@ This concept applies to all types of caches, including memoization and real obje
    use StellarWP\Arrays\Arr;
 
    // Using the tribe_cache() API
-   $cached = tribe_cache()->get( 'my_stored_array', Tribe__Cache__Listener::TRIGGER_SAVE_POST, null, null, null, $found );
+   $cached = tribe_cache()->get(
+      'my_stored_array',
+      Tribe__Cache__Listener::TRIGGER_SAVE_POST,
+      null,
+      null,
+      null,
+      $found
+   );
 
    // This is too much: we are firing queries (plural) to check a value meant to save queries!
    $is_user_id = fn( $user_id ): bool => get_user_by( 'ID', $user_id ) instanceof \WP_User;
