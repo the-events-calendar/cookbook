@@ -53,9 +53,7 @@ This concept applies to all types of caches, including memoization and real obje
    if( ! $found ){
        // Fetch the customers from the database or an API ...
    }
-   ```
-
-   ```php
+   
    // tribe_cache() API
    $cached = tribe_cache()->get( 'purchasers_count_' . $ticket_id, Tribe__Cache__Listener::TRIGGER_SAVE_POST, null, null, null, $found );
 
