@@ -47,7 +47,7 @@ the context of The Events Calendar suite of plugins.
        $cache = tribe_cache();
        $cache_key = __FUNCTION__ . $count . $from . $format;
 
-       if( !isset( $cache[ $cache_key ] ) ) {
+       if( isset( $cache[ $cache_key ] ) ) {
            return $cache[ $cache_key ];
        }
         
@@ -55,7 +55,8 @@ the context of The Events Calendar suite of plugins.
 
        $cache[ $cache_key ] = $events;
 
-       return $events;
+       // Good habit to always return the cached variable, to avoid mistakenly returning something different what was cached.
+       return $cache[ $cache_key ];
    }
    ```
 
